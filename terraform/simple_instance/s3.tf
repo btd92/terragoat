@@ -3,6 +3,9 @@ provider "aws" {
 }
 
 resource "aws_s3_bucket" "docking_bay" {
+  versioning {
+    enabled = true
+  }
   bucket_prefix = "docking-bay-storage-"
 
   tags = {
